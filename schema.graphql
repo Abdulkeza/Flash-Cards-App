@@ -2,6 +2,19 @@
 ### Do not make changes to this file directly
 
 
+type Mutation {
+  """Create a new user"""
+  CreateUser(email: String!, fullName: String!, password: Int!): User!
+}
+
 type Query {
-  ok: Boolean!
+  """Returns a list of all users in the database"""
+  returnAllUsers: [User!]!
+}
+
+type User {
+  email: String!
+  fullName: String!
+  id: Int!
+  password: Int!
 }
